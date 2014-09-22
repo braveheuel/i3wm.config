@@ -210,3 +210,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute
 # Set Backlickt brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id backlight_control.sh h
 bindsym XF86MonBrightnessDown exec --no-startup-id backlight_control.sh d
+
+###############################
+## Start calc
+bindsym XF86Calculator exec --no-startup-id speedcrunch
