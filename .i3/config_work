@@ -158,8 +158,8 @@ bar {
 
 ################################
 # Remap keys & load .Xresources
-exec --no-startup-id xmodmap ~/.xmodmaprc
-exec --no-startup-id xrdb -merge ~/.Xresources
+#exec --no-startup-id xmodmap ~/.xmodmaprc
+#exec --no-startup-id xrdb -merge ~/.Xresources
 
 ################################
 # nm-applet
@@ -175,8 +175,7 @@ assign [class="Google-chrome"] 2
 ################################
 # Start tunderbird
 exec --no-startup-id thunderbird
-
-
+#
 # Put to workspace 3 all thunderbird windows
 assign [class="Thunderbird"] 3
 
@@ -208,6 +207,10 @@ exec --no-startup-id skype
 assign [class="Skype"] 10
 
 ###############################
+# Start xscreensaver
+exec --no-startup-id xscreensaver -no-splash 
+
+###############################
 # Start easystroke
 exec --no-startup-id easystroke
 
@@ -223,8 +226,10 @@ bindsym $mod+p scratchpad show
 
 ###############################
 # Lock Screen
-bindsym XF86ScreenSaver exec i3lock -i ~/Pictures/Background/lock.png
-bindsym $mod+less exec i3lock -i ~/Pictures/Background/lock.png
+#bindsym XF86ScreenSaver exec i3lock -i ~/Pictures/Background/lock.png
+bindsym XF86ScreenSaver exec xscreensaver-command -lock
+#bindsym $mod+less exec i3lock -i ~/Pictures/Background/lock.png
+bindsym $mod+less exec xscreensaver-command -lock
 
 ###############################
 # Start calc
