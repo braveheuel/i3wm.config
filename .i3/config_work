@@ -166,6 +166,10 @@ bar {
 exec /usr/bin/nm-applet
 
 ################################
+# keyindicatior
+exec /usr/bin/indicator-keylock
+
+################################
 # Start google-chrome on startup
 exec --no-startup-id google-chrome
 #
