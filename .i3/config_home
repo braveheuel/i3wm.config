@@ -174,7 +174,11 @@ assign [class="XTerm"] 1
 
 ###############################
 # set background
-exec --no-startup-id feh --bg-scale ~/Bilder/Background/Nasa_Space_Astronauts_HD_Wallpapers_1920x1080_-_0036.jpg
+exec --no-startup-id feh --bg-scale ~/Bilder/Background/actual
+
+###############################
+# start parcelitte
+exec --no-startup-id parcellite
 
 ###############################
 # scratchpad
