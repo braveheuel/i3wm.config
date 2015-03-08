@@ -152,6 +152,10 @@ bar {
 }
 
 ################################
+# Start synergyserver
+exec --no-startup-id start_synergy
+
+################################
 # Start google-chrome on startup
 exec --no-startup-id google-chrome
 #
