@@ -151,15 +151,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command $HOME/bin/i3-conky-bar
 	font pango:DejaVu Sans Mono 10
 }
-
 
 ################################
 # Remap keys & load .Xresources
 #exec --no-startup-id xmodmap ~/.xmodmaprc
 #exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id setxkbmap de -variant nodeadkeys
 
 ################################
 # nm-applet
@@ -167,7 +168,7 @@ exec /usr/bin/nm-applet
 
 ################################
 # keyindicatior
-exec /usr/bin/indicator-keylock
+# exec /usr/bin/indicator-keylock
 
 ################################
 # Start google-chrome on startup
@@ -187,14 +188,14 @@ assign [class="Thunderbird"] 3
 # Start screen on local machine
 exec --no-startup-id start_screen
 exec --no-startup-id start_screen novbld07
-exec --no-startup-id start_screen novbld17
+exec --no-startup-id start_screen novrep01
 #
 # Put xterm class to workspace 1
 assign [class="XTerm"] 1
 
 ###############################
 # set background
-exec --no-startup-id feh --bg-scale ~/Pictures/Background/Nasa_Space_Astronauts_HD_Wallpapers_1920x1080_-_0036.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Background/background
 
 ###############################
 # start parcelite
@@ -202,8 +203,8 @@ exec --no-startup-id parcellite
 
 ###############################
 # start eclipse
-exec --no-startup-id start_eclipse
-assign [class="Eclipse"] 4
+#exec --no-startup-id start_eclipse
+#assign [class="Eclipse"] 4
 
 ###############################
 # Start skype
