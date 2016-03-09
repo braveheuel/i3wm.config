@@ -24,7 +24,7 @@ font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec roxterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -175,7 +175,7 @@ assign [class="google-chrome"] 2
 
 ################################
 # Start screen on local machine
-exec --no-startup-id start_screen
+exec --no-startup-id term-starter silversurfer
 #
 # Put xterm class to workspace 1
 assign [class="XTerm"] 1
