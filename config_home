@@ -200,7 +200,7 @@ bindsym $mod+m exec --no-startup-id i3-msg workspace 4; exec start_mutt
 assign [class="Mutt"] 4
 
 ###############################
-# start NetworkManager Applet
+# start xmodmap with changed layout
 exec --no-startup-id xmodmap ~/.xmodmaprc
 
 ###############################
