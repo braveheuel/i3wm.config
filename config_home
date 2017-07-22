@@ -153,7 +153,7 @@ bindsym $mod+y exec term-starter
 # finds out, if available)
 bar {
         #status_command i3status
-        status_command $HOME/bin/conky-i3bar
+        status_command $HOME/bin/conky-i3bar fancy-home
 }
 
 ################################
