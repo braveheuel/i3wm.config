@@ -43,6 +43,7 @@ conky.text = [[
 # JSON for i3bar
 
 [
+{"full_text": "🔋 ${battery}", "separator": false, "separator_block_width": 8, "color" : ${if_match ${battery_percent}<=10} "\#dc322f" ${else} ${if_match ${battery_percent}<=20}"\#cb4b16" ${else} ${if_match ${battery_percent}<=30}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
 {"full_text": "⌨", "separator": false },
 {"full_text": "⇪",
   "color":
@@ -58,48 +59,13 @@ conky.text = [[
  ${endif}, "separator": false
 },
 
-{ "full_text" : " ${fs_free /home}",  "separator":false, "separator_block_width":8, "color" : ${if_match ${fs_free_perc /home}<=5}       "\#dc322f"  ${else} ${if_match ${fs_free_perc /home}<=10}"\#cb4b16" ${else} ${if_match ${fs_free_perc /home}<=15}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
-
-{ "full_text" : " ${fs_free /var/lib/schroot}",  "separator":false, "separator_block_width":8, "color" : ${if_match ${fs_free_perc}<=5}       "\#dc322f"  ${else} ${if_match ${fs_free_perc}<=10}"\#cb4b16" ${else} ${if_match ${fs_free_perc}<=15}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
+{ "full_text" : " ${fs_free /}",  "separator":false, "separator_block_width":8, "color" : ${if_match ${fs_free_perc /}<=5}       "\#dc322f"  ${else} ${if_match ${fs_free_perc /}<=10}"\#cb4b16" ${else} ${if_match ${fs_free_perc /}<=15}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
 
 { "full_text" : ${if_match ${cpu cpu0}<10} " 0${cpu cpu0}%" ${else} " ${cpu cpu0}%" ${endif},       "separator":false, "separator_block_width":8, "color" : ${if_match ${cpu cpu0}>=90}       "\#dc322f"  ${else} ${if_match ${cpu cpu0}>=85}"\#cb4b16" ${else} ${if_match ${cpu cpu0}>=70}"\#b58900"${else} "\#dddddd" ${endif} ${endif} ${endif}},
 
-{ "full_text" : " ${exec ~/bin/cpu_avg_temp.sh}°C",        "separator":false, "separator_block_width":8, "color" : ${if_match ${exec ~/bin/cpu_avg_temp.sh}<=65} "\#dddddd"     ${else}  ${if_match ${exec ~/bin/cpu_avg_temp.sh}>=75}"\#dc322fc" ${else} ${if_match ${exec ~/bin/cpu_avg_temp.sh}>=70}"\#cb4b16"${else} "\#b58900" ${endif}${endif}  ${endif} },
+{ "full_text" : " ${exec ~/bin/cpu_avg_temp.sh}°C", "separator":false, "separator_block_width":8, "color" : ${if_match ${exec ~/bin/cpu_avg_temp.sh}<=65} "\#dddddd"     ${else}  ${if_match ${exec ~/bin/cpu_avg_temp.sh}>=75}"\#dc322fc" ${else} ${if_match ${exec ~/bin/cpu_avg_temp.sh}>=70}"\#cb4b16"${else} "\#b58900" ${endif}${endif}  ${endif} },
 
 { "full_text" : " ${memperc}%",        "separator":false, "separator_block_width":8, "color" : ${if_match ${memperc}>90}       "\#dc322f"  ${else} ${if_match ${memperc}>=85}"\#cb4b16" ${else} ${if_match ${memperc}>=70}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
-{ "full_text" : ${if_match "$gw_iface"=="(null)"} \
-                "🖧 "\
-                ${else} ${if_match ${upspeedf enp0s31f6}>=2.5}\
-                            ${if_match ${downspeedf enp0s31f6}>=10.0}\
-                            "🖧 "\
-                            ${else} "🖧 "\
-                            ${endif}\
-                        ${else} ${if_match ${downspeedf enp0s31f6}>=10.0}\
-                                "🖧 "\
-                                ${else} "🖧 "\
-                                ${endif}\
-                        ${endif}\
-${endif} ,  "separator":false, "separator_block_width":5, "color" : ${if_match "$gw_iface"=="(null)"}"\#dc322f"${else}"\#dddddd"${endif} },
-
-{ "full_text" : ${if_match ${downspeedf enp0s31f6}>=10}\
-                            ""\
-                            ${else} ""\
-                            ${endif}\
-,  "separator":false, "separator_block_width":3, "color" :${if_match ${downspeedf enp0s31f6}>=10}\
-                            "\#dddddd"\
-                            ${else} "\#999999"\
-                            ${endif}\
-},
-{ "full_text" : ${if_match ${upspeedf enp0s31f6}>=2.5}\
-                            ""\
-                            ${else} ""\
-                            ${endif}\
-,  "separator":false, "separator_block_width":8, "color" :${if_match ${upspeedf enp0s31f6}>=2.5}\
-                            "\#dddddd"\
-                            ${else} "\#999999"\
-                            ${endif}\
-},
-
 
 { "full_text" : \
 ${if_match "${exec ~/bin/alsa_conky.sh}"!="muted"}\
@@ -119,9 +85,6 @@ ${if_match "${exec ~/bin/alsa_conky.sh}"=="muted"}\
             ${endif}\
             ${endif}\
 ${endif}},
-
-# checkupdates for pacman!
-{ "full_text" : ${if_match ${execpi 3600 checkupdates | wc -l}<5}""${else}" ${execpi 60 checkupdates | wc -l}"${endif},  "separator":false, "separator_block_width":8, "color" : ${if_match ${execpi 3600 checkupdates | wc -l}==0}"\#000000"${else}"\#dc322f"${endif} },
 
 { "full_text" : " ${execi 300 ~/bin/weather.sh "EUR|DE|GM011|BOCHUM"}" ,  "separator":false, "separator_block_width":8, "color" : "\#dddddd" },
 { "full_text" :" ${time %a, %d %b 🗓 %V}  ${time %R}",     "separator":false, "separator_block_width":5, "color" : "\#dddddd" },
