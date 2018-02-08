@@ -43,7 +43,9 @@ conky.text = [[
 # JSON for i3bar
 
 [
-{"full_text": "🔋 ${battery}", "separator": false, "separator_block_width": 8, "color" : ${if_match ${battery_percent}<=10} "\#dc322f" ${else} ${if_match ${battery_percent}<=20}"\#cb4b16" ${else} ${if_match ${battery_percent}<=30}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
+{"full_text": "🖧 ${if_gw}GW${else}GW not set${endif}", "separator": false},
+{"full_text": "🔋 ${battery} ${battery_time}", "separator": false, "separator_block_width": 8, "color" : ${if_match ${battery_percent}<=10} "\#dc322f" ${else} ${if_match ${battery_percent}<=20}"\#cb4b16" ${else} ${if_match ${battery_percent}<=30}"\#b58900"${else} "\#dddddd" ${endif} ${endif}${endif} },
+
 {"full_text": "⌨", "separator": false },
 {"full_text": "⇪",
   "color":
