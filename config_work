@@ -184,7 +184,7 @@ exec --no-startup-id feh --bg-scale ~/Bilder/Background/actual
 ###############################
 # scratchpad
 bindsym $mod+Shift+P move scratchpad
-bindsym $mod+p scratchpad show
+bindsym $mod+o scratchpad show
 
 ###############################
 # start Keyboard adjustment
@@ -247,3 +247,15 @@ client.urgent           #2f343a #900000 #c5c8c6 #900000   #900000
 client.placeholder      #000000 #0c0c0c #c5c8c6 #000000   #0c0c0c
 
 client.background       #1d1f21
+
+## Presentation Modes
+set $presentation_mode (0) External Off, (9) Docking Station, (8) Mirror
+mode "$presentation_mode" {
+        bindsym 0 exec --no-startup-id xrandr --output DP2-2 --off; mode "default"
+        bindsym 9 exec --no-startup-id xrandr -d :0.0 --output DP2-2 --left-of eDP1 --auto; mode "default"
+#        bindsym 8 exec --no-startup-id, mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+p mode "$presentation_mode"
